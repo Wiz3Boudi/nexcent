@@ -887,6 +887,45 @@ document.addEventListener('DOMContentLoaded', function () {
                   document.getElementById('allDivsContaoners20').appendChild(heading[0]);
             }
             footer();
+            function Dev() {
+                  const devArray =[];
+                  for (let i = 0; i < 2; i++) {
+                        const developer = document.createElement('div');
+                        developer.id = 'developer'+(i+1);
+                        developer.className = 'developer';
+                        document.getElementById('allDivsContaoners17').appendChild(developer);
+                        devArray.push(developer)
+                  }
+
+                  const devHead = document.createElement('h3');
+                  devHead.textContent = 'developers';
+                  document.getElementById('developer1').appendChild(devHead);
+
+                  const divData = [
+                        'https://github.com/Wiz3Boudi',
+                        'https://www.linkedin.com/in/abdalah-abdelmeged-73b946322/',
+                  ]
+                  const iconData = [
+                        'developers/github.png',
+                        'developers/linkedin (1).png',
+                  ]
+                  divData.forEach((url, index) => {
+                        const devlink = document.createElement('a');
+                        devlink.href = url;
+                        document.getElementById('developer2').appendChild(devlink)
+                        const devIcon = document.createElement('img');
+                        devIcon.src = iconData[index]
+                        devIcon.style.width = '30px';
+                        devlink.appendChild(devIcon)
+
+                  })
+
+
+
+
+
+            }
+            Dev();
       }
       sectionThree();
 });
@@ -1378,6 +1417,13 @@ input{
 }
 ::placeholder{
       color: var(--color-white);
+}
+#developer2{
+      display: flex;
+      gap: 2rem;
+}
+#developer1 h3{
+      color: #2E7D31; 
 }
 `;
       document.head.appendChild(styleOnJs);
